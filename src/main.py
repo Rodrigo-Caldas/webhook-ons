@@ -1,24 +1,24 @@
-from fastapi import FastAPI
-from src.esquemas import SintegrePayload
-from pyngrok import ngrok
+from fastapi import FastAPI, Request
+from pyngrok import conf, ngrok
 
-import logging
+from src.config import config
+from src.logit import log
 
 app = FastAPI()
 
-# Configura um logger simples para ver os dados recebidos
-logging.basicConfig(level=logging.INFO)
 
-public_url = ngrok.connect(8000)
-logging.info(f"Servidor exposto no Ngrok: {public_url}")
+@app.on_event("startup")
+def iniciar_ngrok():
+    conf.get_default().auth_token = config.token_ngrok
+    public_url = ngrok.connect(8000)
+    log.info(f"Servidor exposto no Ngrok: {public_url}")
 
-# Rota para receber o webhook
-@app.post("/webhook/rodrigo-caldas")
-async def receber_webhook(payload: SintegrePayload):
-    logging.info("Produto recebido: %s", payload.Nome)
-    logging.info("URL de download: %s", payload.Url)
-    logging.info("Payload completo: %s", payload.json(indent=2))
 
-    # Aqui você pode processar o dado ou acionar outro sistema
-    print({"status": "recebido", "produto": payload.Nome})
-    return {"status": "recebido", "produto": payload.Nome}
+@app.post("/webhook")
+async def receber_webhook(payload: Request, usuario):
+    try:
+        body = await payload.body()
+        log.warning("Payload recebido bruto:\n%s", body.decode())
+
+    except Exception as erro:
+        print(erro)
