@@ -2,6 +2,7 @@
 
 from typing import TypedDict
 
+
 class SintegrePayload(TypedDict):
     """
     Estrutura do payload dos dados do Webhook.
@@ -25,10 +26,11 @@ class SintegrePayload(TypedDict):
 
     Processo: str
         Nome do processo do produto.
-        
+
     Url: str
         Url para dowload do arquivo.
     """
+
     DataProduto: str
     MacroProcesso: str
     Nome: str
