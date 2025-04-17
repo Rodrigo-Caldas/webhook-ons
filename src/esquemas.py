@@ -9,25 +9,25 @@ class SintegrePayload(BaseModel):
 
     Parameters
     ----------
-    DataProduto: str
+    dataProduto: str
         A data de referência do produto.
 
-    MacroProcesso: str
+    macroProcesso: str
         O nome do macroprocesso do produto.
 
-    Nome: str
+    nome: str
         O nome do produto.
 
-    Periodicidade: str
+    periodicidade: str
         A data inicial de referência do produto.
 
-    PeriodicidadeFinal: str
+    periodicidadeFinal: str
         A data final de referência do produto.
 
-    Processo: str
+    processo: str
         Nome do processo do produto.
 
-    Url: str
+    url: str
         Url para dowload do arquivo.
     """
 
