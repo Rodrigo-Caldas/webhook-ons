@@ -1,15 +1,14 @@
 import secrets
+from datetime import datetime
 
+import requests
 from fastapi import Depends, FastAPI, HTTPException, Request, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from pyngrok import conf, ngrok
-from src.esquemas import SintegrePayload
-from datetime import datetime
 
 from src.config import config
+from src.esquemas import SintegrePayload
 from src.logit import log
-
-import requests
 
 app = FastAPI()
 seguranca = HTTPBasic()
@@ -79,7 +78,10 @@ async def baixar_arquivo(payload: Request, acesso=Depends(autenticar)):
         data_obj = datetime.strptime(obj_payload.dataProduto, "%d/%m/%Y")
         resposta = requests.get(url=obj_payload.url)
 
-        with open(f"{config.caminho_download}/{obj_payload.nome} - {data_obj.strftime("%d-%m-%Y")}" , "wb") as arquivo:
+        with open(
+            f"{config.caminho_download}/{obj_payload.nome} - {data_obj.strftime("%d-%m-%Y")}",
+            "wb",
+        ) as arquivo:
             arquivo.write(resposta.content)
 
         log.info("[bright_green]Arquivo Baixado!")
