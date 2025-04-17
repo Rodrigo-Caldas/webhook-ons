@@ -1,5 +1,7 @@
 """Configurações do serviço."""
 
+from pathlib import Path
+
 from pydantic_settings import BaseSettings
 
 
@@ -21,6 +23,8 @@ class Configuracoes(BaseSettings):
     senha: str = "senha-webhook"
     token_ngrok: str = "token-ngrok"
     dominio_ngrok: str = "dominio-ngrok-do-usuario"
+    caminho_download: Path = Path("download")
 
 
 config = Configuracoes()
+config.caminho_download.mkdir(parents=True, exist_ok=True)
