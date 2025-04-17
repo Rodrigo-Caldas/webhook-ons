@@ -1,0 +1,25 @@
+[project]
+name = "webhook_ons"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Rodrigo-Caldas", email = "rodrigocaldas@id.uff.br"},
+]
+dependencies = ["fastapi>=0.115.12", "pydantic-settings>=2.8.1", "requests>=2.32.3", "uvicorn>=0.34.1", "pyngrok>=7.2.4", "rich>=14.0.0"]
+requires-python = "==3.13.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[dependency-groups]
+dev = [
+    "lint>=1.2.1",
+    "black>=25.1.0",
+    "flake8>=7.2.0",
+    "isort>=6.0.1",
+    "mypy>=1.15.0",
+    "pytest>=8.3.5",
+]
