@@ -20,6 +20,7 @@ class Configuracoes(BaseSettings):
     usuario: str = "usuario-webhook"
     senha: str = "senha-webhook"
     token_ngrok: str = "token-ngrok"
+    dominio_ngrok: str = "dominio-ngrok-do-usuario"
 
 
 config = Configuracoes()
