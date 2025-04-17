@@ -17,6 +17,8 @@ class Configuracoes(BaseSettings):
         Senha do Webhook.
     token_ngrok: str
         Token de usuário do ngrok.
+    caminho_download: Path
+        Caminho onde o arquivo será salvo.
     """
 
     usuario: str = "usuario-webhook"
