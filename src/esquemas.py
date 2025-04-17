@@ -1,9 +1,9 @@
 """Esquema de requisição do webhook."""
 
-from typing import TypedDict
+from pydantic import BaseModel
 
 
-class SintegrePayload(TypedDict):
+class SintegrePayload(BaseModel):
     """
     Estrutura do payload dos dados do Webhook.
 
@@ -31,10 +31,10 @@ class SintegrePayload(TypedDict):
         Url para dowload do arquivo.
     """
 
-    DataProduto: str
-    MacroProcesso: str
-    Nome: str
-    Periodicidade: str
-    PeriodicidadeFinal: str
-    Processo: str
-    Url: str
+    dataProduto: str
+    macroProcesso: str
+    nome: str
+    periodicidade: str
+    periodicidadeFinal: str
+    processo: str
+    url: str
