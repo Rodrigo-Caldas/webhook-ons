@@ -21,10 +21,10 @@ class Configuracoes(BaseSettings):
         Caminho onde o arquivo será salvo.
     """
 
-    usuario: str = "usuario-webhook"
-    senha: str = "senha-webhook"
-    token_ngrok: str = "token-ngrok"
-    dominio_ngrok: str = "dominio-ngrok-do-usuario"
+    usuario: str = "rodrigo_caldas"
+    senha: str = "@NS12345"
+    token_ngrok: str = "2vkEqj8FJVHt4pGBVacbjOL5vBy_nTQusCD3mnPRxyyEN4Ji"
+    dominio_ngrok: str = "totally-eager-cardinal.ngrok-free.app"
     caminho_download: Path = Path("download")
 
 
