@@ -24,12 +24,6 @@ git clone https://github.com/Rodrigo-Caldas/webhook-ons.git
 
 ## :pencil: Como utilizar o serviço?
 
-Execute o comando abaixo no terminal para clonar o repositório:
-
-```bash  
-git clone https://github.com/Rodrigo-Caldas/ana-api.git
-```
-
 Para o webhook ter mais segurança, o serviço foi pensado para ter autenticação por usuário e senha. Não é obrigatório, mas segue uma boa prática de segurança para evitar qualquer tipo de invasão.
 
 No arquivo ``config.py`` altere as 4 variáveis de configuração específicadas aqui no ``readme``. As variáveis ``usuario`` e ``senha`` não são obrigatórias, mas são recomendadas como já explicado anteriormente:
@@ -69,7 +63,7 @@ E por fim rode a aplicação com:
 uvicorn src.main:app --reload
 ```
 
-## :whale: Via ``Docker``
+### :whale: Via ``Docker``
 
 Para rodar a aplicação em um container, construa a imagem da aplicação a partir do comando:
 
