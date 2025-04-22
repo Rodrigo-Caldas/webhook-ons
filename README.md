@@ -10,7 +10,7 @@
 
 ## :scroll: O que o serviço faz?
 
-Repositório com o webhook do Sintegre configurado, faz o download dos arquivos que o Sintegre disponibiliza. Esse serviço optou por utilizar o Ngrok (ferramenta que te permite criar um túnel seguro, atrás de NATs e Firewalls, que expõem serviços locais para a Internet), fazendo com que o usuário não precise expor uma porta do computador de forma manual.
+Repositório com o webhook do Sintegre configurado, faz o download dos arquivos que o Sintegre disponibiliza. Esse serviço optou por utilizar o Ngrok (ferramenta que te permite criar um túnel seguro, atrás de NATs e Firewalls, que expõem serviços locais para a Internet) fazendo com que o usuário não precise expor uma porta do computador de forma manual.
 
 Para criar sua conta ngrok gratuitamente visite: https://ngrok.com
 
@@ -31,7 +31,7 @@ git clone https://github.com/Rodrigo-Caldas/webhook-ons.git
 
 Para o webhook ter mais segurança, o serviço foi pensado para ter autenticação por usuário e senha. Não é obrigatório, mas segue uma boa prática de segurança para evitar qualquer tipo de invasão.
 
-No arquivo ``config.py`` altere as 4 variáveis de configuração específicadas aqui no ``readme``. As variáveis ``usuario`` e ``senha`` não são obrigatórias, mas são recomendadas como já explicado anteriormente:
+No arquivo ``config.py`` altere as 4 variáveis de configuração especificadas aqui no ``readme``. As variáveis ``usuario`` e ``senha`` não são obrigatórias, mas são recomendadas como já explicado anteriormente:
 
 ```bash
 usuario: str = "usuario-webhook"
