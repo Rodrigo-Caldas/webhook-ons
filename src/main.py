@@ -1,3 +1,5 @@
+"""Aplicação webhook."""
+
 import secrets
 from datetime import datetime
 
