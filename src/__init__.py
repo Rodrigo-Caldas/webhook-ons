@@ -1,1 +1,1 @@
-"""Módulo princial da aplicação."""
+"""Processamento do webhook."""
