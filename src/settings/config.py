@@ -1,6 +1,7 @@
 """Configurações do serviço."""
 
 from pathlib import Path
+import asyncio
 
 from pydantic_settings import BaseSettings
 
@@ -21,6 +22,8 @@ class Config(BaseSettings):
         Domínio do Ngrok.
     download_path: Path
         Caminho onde o arquivo será salvo.
+    task_limiter : asyncio.Semaphore
+        Limitador de tarefas assíncronas.
     """
 
     user: str = "*******"
@@ -28,6 +31,7 @@ class Config(BaseSettings):
     token_ngrok: str = "*********"
     ngrok_domain: str = "*********"
     download_path: Path = Path("download")
+    task_limiter: asyncio.Semaphore = asyncio.Semaphore(5)
 
 
 config = Config()
