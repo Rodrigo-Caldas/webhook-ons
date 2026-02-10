@@ -1,6 +1,7 @@
 """Modelos e tipos gerais do Webhook."""
 
 from datetime import datetime
+from pathlib import Path
 from typing import TypedDict
 
 
@@ -56,8 +57,8 @@ class WebhookDB(TypedDict):
         Nome do arquivo quando é baixado.
     extension: str
         Extensão do arquivo.
-    s3_path: Path
-        Caminho do arquivo salvo no S3.
+    local_path: Path
+        Caminho do arquivo salvo no localmente.
     periodicity: datetime
         Periodicidade do arquivo.
     final_periodicity: datetime
@@ -76,7 +77,7 @@ class WebhookDB(TypedDict):
     std_name: str
     download_name: str
     extension: str
-    s3_path: str
+    local_path: str
     periodicity: datetime
     final_periodicity: datetime
     received_time: datetime
