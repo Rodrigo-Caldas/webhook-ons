@@ -1,0 +1,34 @@
+"""Configurações do serviço."""
+
+from pathlib import Path
+
+from pydantic_settings import BaseSettings
+
+
+class Config(BaseSettings):
+    """
+    Configurações relacionadas ao projeto.
+
+    Parameters
+    ----------
+    user: str
+        Usuário do Webhook.
+    password: str
+        Senha do Webhook.
+    token_ngrok: str
+        Token de usuário do Ngrok.
+    ngrok_domain: str
+        Domínio do Ngrok.
+    download_path: Path
+        Caminho onde o arquivo será salvo.
+    """
+
+    user: str = "*******"
+    password: str = "*******"
+    token_ngrok: str = "*********"
+    ngrok_domain: str = "*********"
+    download_path: Path = Path("download")
+
+
+config = Config()
+config.download_path.mkdir(parents=True, exist_ok=True)
