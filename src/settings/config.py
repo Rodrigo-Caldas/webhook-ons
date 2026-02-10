@@ -12,10 +12,6 @@ class Config(BaseSettings):
 
     Parameters
     ----------
-    user: str
-        Usuário do Webhook.
-    password: str
-        Senha do Webhook.
     token_ngrok: str
         Token de usuário do Ngrok.
     ngrok_domain: str
@@ -26,8 +22,6 @@ class Config(BaseSettings):
         Limitador de tarefas assíncronas.
     """
 
-    user: str = "*******"
-    password: str = "*******"
     token_ngrok: str = "*********"
     ngrok_domain: str = "*********"
     download_path: Path = Path("download")
